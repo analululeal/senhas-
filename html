@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #senha {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4caf50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gerador de Senhas</h1>
+
+        <input type="text" id="senha" readonly placeholder="Sua senha aparecerá aqui">
+
+        <button onclick="gerarSenha()">Gerar Senha</button>
+    </div>
+
+    <script>
+        function gerarSenha() {
+            const maiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const minusculas = "abcdefghijklmnopqrstuvwxyz";
+
+            // Combina letras maiúsculas e minúsculas
+            const letras = maiusculas + minusculas;
+
+            let senha = "";
+
+            // Gera uma senha com 8 letras
+            for (let i = 0; i < 8; i++) {
+                const numero = Math.floor(Math.random() * letras.length);
+                senha += letras[numero];
+            }
+
+            document.getElementById("senha").value = senha;
+        }
+    </script>
+
+</body>
+</html>
