@@ -1,0 +1,4 @@
+const maiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const minusculas = "abcdefghijklmnopqrstuvwxyz";
+
+const letras = maiusculas + minusculas;
